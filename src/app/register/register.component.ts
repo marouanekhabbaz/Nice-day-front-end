@@ -1,3 +1,4 @@
+import { Memory } from './../models/memory';
 import { User } from './../models/user';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
@@ -19,6 +20,8 @@ export class RegisterComponent {
 
   public user = new User("",'','','','');
 
+  public memory = new Memory( 10,19,1,40,10,80, 122,"morocco", 12, 9, "some discription")
+
   clientMessage ={message :""};
 
 
@@ -31,10 +34,12 @@ export class RegisterComponent {
 
     let x =  JSON.stringify(this.user);
 
+    let mem =  JSON.stringify(this.memory);
+
 
     this.userService.registerUser(x )
       .subscribe(
-        data => this.clientMessage.message = `Successfully inserted ${data.firstName}`,
+        data => this.userService.addMemoryToUser(mem, data).subscribe(data => console.log(data)),
         error => this.clientMessage.message = `Something went wrong. Error: ${error}`
       );
 

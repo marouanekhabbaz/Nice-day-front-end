@@ -54,9 +54,9 @@ export class UserService {
 
 
 
-  public registerUser(user: string): Observable<User> {
+  public registerUser(user: string): Observable<number> {
 
-    return this.http.post<User>(`${url}/add`, user, this.httpOptions)
+    return this.http.post<number>(`${url}/add`, user, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       )
@@ -73,6 +73,18 @@ export class UserService {
     console.log('login...')
    return this.http.put<User>(`${url}/${id}`, user, this.httpOptions).pipe( catchError(this.handleError))
   }
+
+
+
+
+  addMemoryToUser(memory :string, id :number) : Observable<number> {
+
+   return this.http.post<number>(`${url}/${id}/addmemory`, memory, this.httpOptions).pipe( catchError(this.handleError))
+
+
+  }
+
+
 
 
 /**
