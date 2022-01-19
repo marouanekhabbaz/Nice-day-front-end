@@ -16,21 +16,19 @@
             <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
           </li>
 
-          <li class="nav-item">
-            <a  *ngIf=" !isLoggedIn" Inclass="nav-link" routerLink="/login">Login</a>
-          </li>
-          <li class="nav-item">
-              <a  *ngIf="  !isLoggedIn"  class="nav-link"  routerLink="/register">Register</a>
-          </li>
-         <li  *ngIf="isLoggedIn" class="nav-item">
-                <a  class="nav-link"routerLink="/favorites">Favorites</a>
-          </li>
 
-          <li  *ngIf="isLoggedIn" class="nav-item">
+
+
+          <li   class="nav-item">
             <a  class="nav-link"routerLink="/memories">Memories </a>
          </li>
 
-          <li  *ngIf="isLoggedIn" class="nav-item">
+
+         <li  class="nav-item">
+          <a  class="nav-link"routerLink="/edit"> Edit profile </a>
+       </li>
+
+          <li  class="nav-item">
             <a  class="nav-link"routerLink="/signout">Sign out </a>
          </li>
 
@@ -38,6 +36,14 @@
       </div>
     </div>
   </nav>
+
+
+
+<h1>Welcome {{user.firstName}}</h1>
+<p>{{user.memories}}</p>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

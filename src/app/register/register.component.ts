@@ -27,8 +27,6 @@ export class RegisterComponent {
   public registerUserFromService( ): void {
 
 
-    console.log("clicked ================")
-     console.log(this.user)
 
 
     let x =  JSON.stringify(this.user);

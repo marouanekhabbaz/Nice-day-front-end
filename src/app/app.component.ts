@@ -1,3 +1,4 @@
+import { User } from './models/user';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nice-day-frontend';
+  public  static islogedIn : boolean = false;
+   public user : User = new User("","","","","")
+
+
+
+
 }

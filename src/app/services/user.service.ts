@@ -62,10 +62,28 @@ export class UserService {
       )
   }
 
-  getWithEmailAndPswUser(user :string) {
+  getWithEmailAndPswUser(user :string) : Observable<User> {
     console.log('login...')
-    this.http.post<User>(`${url}/find`, user, this.httpOptions).subscribe(console.log);
+   return this.http.post<User>(`${url}/find`, user, this.httpOptions).pipe( catchError(this.handleError))
   }
 
+
+
+ updateUser(user :string, id :number) : Observable<User> {
+    console.log('login...')
+   return this.http.put<User>(`${url}/${id}`, user, this.httpOptions).pipe( catchError(this.handleError))
+  }
+
+
+/**
+ * findUserById(id : number): Observable<User>{
+
+  return this.http.get<User>(`${url}/${id}`)
+  .pipe(
+    catchError(this.handleError)
+  )
+
+}
+ */
 
 }

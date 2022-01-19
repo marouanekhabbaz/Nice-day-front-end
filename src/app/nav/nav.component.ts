@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent  {
 
-  constructor() { }
+  constructor(public appComponent: AppComponent ) { }
 
-  ngOnInit(): void {
+
+  public isLoggedIn = AppComponent.islogedIn
+
+
+  setLoggedIn(args : boolean){
+    this.isLoggedIn =args
   }
+
+
+
 
 }

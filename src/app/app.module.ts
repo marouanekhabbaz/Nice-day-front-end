@@ -11,6 +11,8 @@ import { ErrorComponent } from './error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EfterLoginComponent } from './efter-login/efter-login.component';
+import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     LoginComponent,
     NavComponent,
-    ErrorComponent
+    ErrorComponent,
+    EfterLoginComponent,
+    EditUserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [AppComponent, NavComponent, LoginComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
